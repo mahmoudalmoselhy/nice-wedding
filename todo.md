@@ -44,3 +44,11 @@
 - [x] Reveal the flare gradually after the two-second delay.
 - [x] Reveal navigation, headline, supporting copy, button, and caption in a firelight-led sequence.
 - [x] Verify that no text flashes before the flare reveal on desktop and mobile.
+
+## Layer-Driven Firelight Text
+
+- [x] Keep all Hero text permanently present but black on black before ignition.
+- [x] Remove independent copy fade-in animations.
+- [x] Use the flare layer to drive a moving red-light reveal across the text layer.
+- [x] Preserve the layer order: black background, photorealistic flare, firelit text.
+- [x] Verify the lighting-based behavior on desktop and mobile.

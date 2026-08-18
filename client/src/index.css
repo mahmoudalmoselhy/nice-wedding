@@ -169,6 +169,59 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
   .footer-line i { min-width: 1.2rem; }
 }
 
+/* Layer-Driven Firelight Text: the copy is always present, but its ink starts black and is illuminated by the flare. */
+.hero::before { z-index: 2; }
+.hero .nav-line,
+.hero .hero-content > *,
+.hero .flare-caption {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+.hero .nav-line { color: #000000; }
+.hero .hero-content .overline,
+.hero .hero-content h1,
+.hero .hero-content h1 i,
+.hero .statement,
+.hero .flare-caption { color: #000000; text-shadow: none; }
+.hero .hero-divider { color: #000000; }
+.hero .hero-divider span { background: #000000; }
+.hero .hero-button { color: #000000; border-color: #000000; }
+.hero .flare-caption span { background: #000000; }
+.hero .brand-mark { border-color: #000000; box-shadow: none; }
+.hero .brand-mark::before,
+.hero .brand-mark::after { border-color: #000000; }
+.hero .brand-mark b { color: #000000; }
+
+.hero.is-lit .nav-line { animation: flare-ink-nav 620ms 310ms cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-content .overline { animation: flare-ink-red 520ms 530ms cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-content h1 { animation: flare-ink-white 820ms 710ms cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-content h1 i { animation: flare-ink-red 820ms 710ms cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-divider { animation: flare-ink-divider 520ms 1.02s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-divider span { animation: flare-divider-line 520ms 1.02s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .statement { animation: flare-ink-soft 580ms 1.15s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-button { animation: flare-ink-outline 560ms 1.32s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .flare-caption { animation: flare-ink-caption 560ms 1.52s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .flare-caption span { animation: flare-caption-line 560ms 1.52s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .brand-mark { animation: flare-mark-reveal 620ms 310ms cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .brand-mark::before { animation: flare-mark-ring-light 620ms 310ms cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .brand-mark::after { animation: flare-mark-red-light 620ms 310ms cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .brand-mark b { animation: flare-mark-star-light 620ms 310ms cubic-bezier(.23,1,.32,1) forwards; }
+
+@keyframes flare-ink-nav { from { color: #000000; } to { color: rgba(245,242,237,.62); } }
+@keyframes flare-ink-red { from { color: #000000; text-shadow: none; } to { color: #e5302e; text-shadow: 0 0 18px rgba(229,48,46,.23); } }
+@keyframes flare-ink-white { from { color: #000000; text-shadow: none; } to { color: #f5f2ed; text-shadow: 0 0 24px rgba(255,80,55,.12); } }
+@keyframes flare-ink-soft { from { color: #000000; } to { color: rgba(245,242,237,.76); } }
+@keyframes flare-ink-divider { from { color: #000000; } to { color: #e5302e; } }
+@keyframes flare-divider-line { from { background: #000000; } to { background: linear-gradient(90deg, rgba(229,48,46,0), #e5302e, rgba(229,48,46,0)); } }
+@keyframes flare-ink-outline { from { color: #000000; border-color: #000000; } to { color: #ffffff; border-color: rgba(255,255,255,.58); } }
+@keyframes flare-ink-caption { from { color: #000000; } to { color: rgba(245,242,237,.42); } }
+@keyframes flare-caption-line { from { background: #000000; } to { background: rgba(245,242,237,.25); } }
+@keyframes flare-mark-reveal { from { border-color: #000000; box-shadow: none; } to { border-color: #e5302e; box-shadow: 0 0 15px rgba(229,48,46,.42); } }
+@keyframes flare-mark-ring-light { from { border-color: #000000; } to { border-color: #f5f2ed; } }
+@keyframes flare-mark-red-light { from { border-color: #000000; } to { border-color: #e5302e; } }
+@keyframes flare-mark-star-light { from { color: #000000; } to { color: #f5f2ed; } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
