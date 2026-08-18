@@ -37,3 +37,10 @@
 - [x] Use the flare’s red light to reveal the headline, navigation, and action gradually.
 - [x] Preserve legibility while making fire, smoke, and sparks fill the scene.
 - [x] Verify the full-screen flare reveal on desktop and mobile.
+
+## Complete Blackout Copy Reveal
+
+- [x] Keep every Hero element fully invisible during the initial black screen.
+- [x] Reveal the flare gradually after the two-second delay.
+- [x] Reveal navigation, headline, supporting copy, button, and caption in a firelight-led sequence.
+- [x] Verify that no text flashes before the flare reveal on desktop and mobile.
