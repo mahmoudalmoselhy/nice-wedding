@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const revealTimer = window.setTimeout(() => setFlareVisible(true), 3000);
+    const revealTimer = window.setTimeout(() => setFlareVisible(true), 5000);
     return () => window.clearTimeout(revealTimer);
   }, []);
 

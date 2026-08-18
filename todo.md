@@ -59,3 +59,10 @@
 - [x] Extend the flare fade-in to three seconds with a smooth gradual curve.
 - [x] Shift firelight and text-color revelation to follow the complete flare fade-in.
 - [x] Verify the revised timing on desktop and mobile.
+
+## Slow Cinematic Flare Entrance
+
+- [x] Extend the initial pure-black hold before ignition.
+- [x] Fade the flare in continuously over five seconds.
+- [x] Delay firelight and text illumination until near the end of the five-second fade.
+- [x] Verify that the flare has no abrupt visual jump on desktop and mobile.
