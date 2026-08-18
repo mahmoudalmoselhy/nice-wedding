@@ -66,3 +66,10 @@
 - [x] Fade the flare in continuously over five seconds.
 - [x] Delay firelight and text illumination until near the end of the five-second fade.
 - [x] Verify that the flare has no abrupt visual jump on desktop and mobile.
+
+## Playful Night Rules Section
+
+- [x] Replace the formal detail cards with a playful night-rules layout.
+- [x] Rewrite the supporting English copy with humorous, friend-to-friend energy.
+- [x] Keep date, location, and practical details clear within the fun treatment.
+- [x] Verify the redesigned section on desktop and mobile.

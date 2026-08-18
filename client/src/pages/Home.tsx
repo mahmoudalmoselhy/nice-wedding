@@ -1,5 +1,5 @@
 /**
- * Full-Bleed Firelight Reveal — the realistic flare is the complete hero background and its light reveals the invite.
+ * Flare-lit wedding invitation — cinematic hero plus a playful, friend-to-friend night-rules section.
  */
 import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -55,45 +55,54 @@ export default function Home() {
         <div className="flare-caption" aria-hidden="true"><span /> ONE RED FLARE. ALL NIGHT. <span /></div>
       </section>
 
-      <section id="details" className="details" aria-labelledby="details-title">
-        <div className="details-intro">
-          <p className="overline">THE NIGHT&apos;S RULES</p>
-          <h2 id="details-title">SHOW UP.<br /><i>STAY LOUD.</i></h2>
+      <section id="details" className="details night-rules" aria-labelledby="details-title">
+        <div className="rules-head">
+          <div>
+            <p className="overline">THE NIGHT&apos;S VERY SERIOUS AGENDA</p>
+            <p className="rules-whisper">Read this like your aunt is watching.</p>
+          </div>
+          <h2 id="details-title">THREE THINGS.<br /><i>ZERO EXCUSES.</i></h2>
         </div>
 
-        <div className="info-grid">
-          <article className="glass-panel featured-panel">
-            <span className="panel-number">01</span>
-            <span className="pass-stamp" aria-hidden="true"><i /><b>✦</b></span>
-            <p className="panel-label">THE WHEN</p>
-            <p className="date-line">Friday <strong>21 August</strong></p>
-            <p className="panel-meta">2026 · The night opens at 7:00 PM</p>
+        <div className="rule-list">
+          <article className="rule-row rule-row-date">
+            <span className="rule-number">01</span>
+            <div className="rule-label"><CalendarPlus size={18} strokeWidth={2.1} /> TIME CHECK</div>
+            <div className="rule-main">
+              <p>FRIDAY, <strong>21 AUGUST.</strong></p>
+              <small>Doors open at 7 PM. Arrive before the playlist judges you.</small>
+            </div>
+            <span className="rule-side-note">NO FASHIONABLY LATE<br />BEHAVIOUR, PLEASE.</span>
           </article>
-          <article className="glass-panel">
-            <span className="panel-number">02</span>
-            <span className="pass-stamp" aria-hidden="true"><i /><b>✦</b></span>
-            <MapPin size={18} strokeWidth={1.8} className="panel-icon" />
-            <p className="panel-label">THE WHERE</p>
-            <p className="panel-copy">The Bride&apos;s House</p>
-            <p className="panel-meta">Directions shared with the family only</p>
+
+          <article className="rule-row rule-row-place">
+            <span className="rule-number">02</span>
+            <div className="rule-label"><MapPin size={18} strokeWidth={2.1} /> LOCATION</div>
+            <div className="rule-main">
+              <p>THE <strong>BRIDE&apos;S HOUSE.</strong></p>
+              <small>Follow the family group. Google Maps has not been invited.</small>
+            </div>
+            <span className="rule-side-note">IF LOST, CALL<br />YOUR FAVORITE COUSIN.</span>
           </article>
-          <article className="glass-panel">
-            <span className="panel-number">03</span>
-            <span className="pass-stamp" aria-hidden="true"><i /><b>✦</b></span>
-            <Music2 size={18} strokeWidth={1.8} className="panel-icon" />
-            <p className="panel-label">THE ENERGY</p>
-            <p className="panel-copy">No soft-launching.</p>
-            <p className="panel-meta">Bring your brightest self—and your loudest clap.</p>
+
+          <article className="rule-row rule-row-vibe">
+            <span className="rule-number">03</span>
+            <div className="rule-label"><Music2 size={18} strokeWidth={2.1} /> VIBE CHECK</div>
+            <div className="rule-main">
+              <p>ARRIVE CUTE.<br /><strong>LEAVE HOARSE.</strong></p>
+              <small>Singing optional. Clapping is absolutely not.</small>
+            </div>
+            <span className="rule-side-note">BRING THE ENERGY.<br />WE&apos;LL HANDLE THE REST.</span>
           </article>
         </div>
 
-        <div className="action-row">
+        <div className="action-row rules-action">
           <button type="button" className="liquid-button" onClick={() => setDetailsOpen((open) => !open)} aria-expanded={detailsOpen}>
-            {detailsOpen ? <Check size={17} strokeWidth={2.2} /> : <CalendarPlus size={17} strokeWidth={2.2} />}
-            <span>{detailsOpen ? "See you there" : "One more thing"}</span>
+            {detailsOpen ? <Check size={17} strokeWidth={2.2} /> : <Sparkles size={17} strokeWidth={2.2} />}
+            <span>{detailsOpen ? "Good. You got the memo." : "Okay, I’m emotionally prepared"}</span>
           </button>
           <div className={detailsOpen ? "note is-open" : "note"} aria-hidden={!detailsOpen}>
-            <Sparkles size={15} strokeWidth={1.9} /><p>We’ll bring the night. You bring the people.</p>
+            <Sparkles size={15} strokeWidth={1.9} /><p>Excellent. Your attendance has been spiritually noted.</p>
           </div>
         </div>
       </section>
