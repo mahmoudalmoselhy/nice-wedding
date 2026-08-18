@@ -52,3 +52,10 @@
 - [x] Use the flare layer to drive a moving red-light reveal across the text layer.
 - [x] Preserve the layer order: black background, photorealistic flare, firelit text.
 - [x] Verify the lighting-based behavior on desktop and mobile.
+
+## Three-Second Flare Fade
+
+- [x] Delay the flare ignition to three seconds after page load.
+- [x] Extend the flare fade-in to three seconds with a smooth gradual curve.
+- [x] Shift firelight and text-color revelation to follow the complete flare fade-in.
+- [x] Verify the revised timing on desktop and mobile.
