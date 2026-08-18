@@ -29,3 +29,11 @@
 - [x] Increase the perceived fire, smoke, sparks, and red illumination through the video treatment.
 - [x] Keep the left-side headline readable against the intensified flare.
 - [x] Verify the aggressive flare treatment on desktop and mobile.
+
+## Full-Bleed Firelight Reveal
+
+- [x] Turn the realistic flare video into the full-bleed Hero background.
+- [x] Keep the Hero pitch black until the two-second flare reveal begins.
+- [x] Use the flare’s red light to reveal the headline, navigation, and action gradually.
+- [x] Preserve legibility while making fire, smoke, and sparks fill the scene.
+- [x] Verify the full-screen flare reveal on desktop and mobile.

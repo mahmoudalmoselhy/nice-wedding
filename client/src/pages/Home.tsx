@@ -1,5 +1,5 @@
 /**
- * Minimal Flare Afterparty — pitch-black hero with a real moving hand-held flare as the only light source.
+ * Full-Bleed Firelight Reveal — the realistic flare is the complete hero background and its light reveals the invite.
  */
 import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -27,12 +27,13 @@ export default function Home() {
   return (
     <main className="minimal-invite">
 
-      <section className="hero" aria-labelledby="invite-title">
+      <section className={flareVisible ? "hero is-lit" : "hero"} aria-labelledby="invite-title">
         <div className={flareVisible ? "hero-flare-video is-visible" : "hero-flare-video"} aria-hidden="true">
           <video autoPlay loop muted playsInline preload="auto">
             <source src="/manus-storage/realistic-red-flare-hero-loop_3816664d.mp4" type="video/mp4" />
           </video>
         </div>
+        <div className="hero-blackout" aria-hidden="true" />
         <header className="nav-line">
           <p className="nav-label"><span className="brand-mark" aria-hidden="true"><i /><b>✦</b></span> HELWAN × MENOFIA</p>
           <p className="nav-date">FRI / 21 AUG / 2026</p>

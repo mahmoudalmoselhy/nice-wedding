@@ -1,5 +1,5 @@
 /*
- * High-Intensity Flare Pass — an oversized, close-cropped real flare dominates the pure-black hero without obscuring copy.
+ * Full-Bleed Firelight Reveal — pure black lifts only when the real flare video lights the entire hero scene.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -63,11 +63,16 @@ button { font: inherit; cursor: pointer; }
 
 .minimal-invite { isolation: isolate; position: relative; min-height: 100svh; overflow: hidden; background: #000000; }
 .hero { position: relative; z-index: 2; display: flex; min-height: 100svh; flex-direction: column; padding: clamp(1.5rem, 3.5vw, 3.2rem) clamp(1.5rem, 7vw, 8rem) clamp(1.8rem, 4vw, 3.7rem); border-bottom: 1px solid rgba(255,255,255,0.1); overflow: hidden; background: #000000; }
-.hero-flare-video { position: absolute; right: -7vw; bottom: -10.5rem; z-index: 1; width: min(64vw, 870px); height: min(112vh, 780px); overflow: hidden; pointer-events: none; opacity: 0; transform: scale(.78) translateX(12%); transform-origin: bottom right; }
-.hero-flare-video::before { content: ""; position: absolute; z-index: -1; inset: -36%; background: radial-gradient(circle at 68% 58%, rgba(255,37,18,.7) 0%, rgba(229,48,46,.36) 18%, rgba(229,48,46,.12) 38%, transparent 68%); filter: blur(32px); }
-.hero-flare-video.is-visible { animation: flare-reveal 920ms cubic-bezier(.23,1,.32,1) forwards; }
-.hero-flare-video video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 92% 77%; filter: contrast(1.55) saturate(1.78) brightness(1.34) drop-shadow(0 0 28px rgba(255,31,16,.95)) drop-shadow(0 0 90px rgba(229,48,46,.72)); transform: scale(2.25); transform-origin: 86% 77%; }
+.hero::before { content: ""; position: absolute; z-index: 1; inset: -18%; opacity: 0; background: radial-gradient(ellipse 72% 110% at 89% 59%, rgba(255,47,25,.62) 0%, rgba(229,48,46,.28) 24%, rgba(229,48,46,.08) 48%, transparent 74%); mix-blend-mode: screen; pointer-events: none; transition: opacity 1.25s cubic-bezier(.23,1,.32,1); }
+.hero.is-lit::before { opacity: 1; animation: firelight-breathe 3.1s 1.1s ease-in-out infinite; }
+.hero-flare-video { position: absolute; z-index: 0; inset: 0; pointer-events: none; opacity: 0; }
+.hero-flare-video.is-visible { animation: full-scene-reveal 1.15s cubic-bezier(.23,1,.32,1) forwards; }
+.hero-flare-video video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 68% center; filter: contrast(1.4) saturate(1.7) brightness(1.17); }
+.hero-blackout { position: absolute; z-index: 1; inset: 0; background: #000000; pointer-events: none; }
+.hero.is-lit .hero-blackout { animation: blackout-lift 1.35s cubic-bezier(.23,1,.32,1) forwards; }
 .nav-line, .footer-line { display: flex; align-items: center; justify-content: space-between; color: rgba(245,242,237,0.62); font-size: 0.62rem; font-weight: 600; letter-spacing: .17em; }
+.hero .nav-line, .hero .hero-content, .hero .flare-caption { opacity: 0; }
+.hero.is-lit .nav-line, .hero.is-lit .hero-content, .hero.is-lit .flare-caption { animation: copy-emerge 780ms 360ms cubic-bezier(.23,1,.32,1) forwards; }
 .nav-label, .nav-date { display: flex; align-items: center; gap: .65rem; margin: 0; }
 .brand-mark { position: relative; display: inline-block; width: 1.5rem; height: 1.5rem; border: 1px solid #e5302e; border-radius: 50%; box-shadow: 0 0 15px rgba(229,48,46,.42); }
 .brand-mark::before, .brand-mark::after { content: ""; position: absolute; width: .67rem; height: .67rem; border: 1px solid #f5f2ed; border-radius: 50%; }
@@ -131,15 +136,17 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 .footer-mark b { top: -.29rem; right: -.05rem; font-size: .36rem; }
 .footer-line i { height: 1px; flex: 1; background: rgba(255,255,255,.1); }
 
-@keyframes flare-reveal { from { opacity: 0; transform: scale(.78) translateX(12%); } to { opacity: 1; transform: scale(1) translateX(0); } }
+@keyframes full-scene-reveal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes blackout-lift { from { opacity: 1; } to { opacity: .32; } }
+@keyframes copy-emerge { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes firelight-breathe { 0%,100% { opacity: .74; transform: scale(.98); } 47% { opacity: 1; transform: scale(1.04); } 63% { opacity: .82; transform: scale(1.01); } }
 
 @media (max-width: 760px) {
   .hero { min-height: 48rem; padding-top: 1.5rem; }
   .nav-date { font-size: .52rem; letter-spacing: .12em; }
   .hero-content { padding: 5rem 0 7rem; justify-content: flex-start; }
   h1 { max-width: 9.5ch; font-size: clamp(2.75rem, 13.3vw, 4.15rem); }
-  .hero-flare-video { top: 56%; right: -41vw; bottom: auto; width: 87vw; height: 67vh; }
-  .hero-flare-video video { object-position: 92% 79%; transform: scale(2.5); transform-origin: 86% 80%; }
+  .hero-flare-video video { object-position: 82% center; filter: contrast(1.38) saturate(1.65) brightness(1.08); }
   .flare-caption { margin-bottom: 1.1rem; }
   .details { padding-top: 5.2rem; }
   .details-intro { display: block; margin-bottom: 2rem; }
