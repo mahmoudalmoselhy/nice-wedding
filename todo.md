@@ -22,3 +22,10 @@
 - [x] Delay the realistic flare reveal by two seconds after page load.
 - [x] Increase the flare scale and visual dominance without harming text readability.
 - [x] Verify the stark black layout on desktop and mobile.
+
+## High-Intensity Flare Pass
+
+- [x] Enlarge the real flare composition dramatically in the Hero.
+- [x] Increase the perceived fire, smoke, sparks, and red illumination through the video treatment.
+- [x] Keep the left-side headline readable against the intensified flare.
+- [x] Verify the aggressive flare treatment on desktop and mobile.

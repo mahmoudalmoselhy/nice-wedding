@@ -1,5 +1,5 @@
 /*
- * Blackout Flare Pass — no backgrounds or fills; a delayed photorealistic flare is the sole animated visual source.
+ * High-Intensity Flare Pass — an oversized, close-cropped real flare dominates the pure-black hero without obscuring copy.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -63,9 +63,10 @@ button { font: inherit; cursor: pointer; }
 
 .minimal-invite { isolation: isolate; position: relative; min-height: 100svh; overflow: hidden; background: #000000; }
 .hero { position: relative; z-index: 2; display: flex; min-height: 100svh; flex-direction: column; padding: clamp(1.5rem, 3.5vw, 3.2rem) clamp(1.5rem, 7vw, 8rem) clamp(1.8rem, 4vw, 3.7rem); border-bottom: 1px solid rgba(255,255,255,0.1); overflow: hidden; background: #000000; }
-.hero-flare-video { position: absolute; right: -8vw; bottom: -4.4rem; z-index: 1; width: min(106vw, 1360px); aspect-ratio: 16 / 9; overflow: hidden; pointer-events: none; opacity: 0; transform: scale(.88) translateX(7%); transform-origin: bottom right; }
-.hero-flare-video.is-visible { animation: flare-reveal 850ms cubic-bezier(.23,1,.32,1) forwards; }
-.hero-flare-video video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.22) saturate(1.28) brightness(1.04); }
+.hero-flare-video { position: absolute; right: -7vw; bottom: -10.5rem; z-index: 1; width: min(64vw, 870px); height: min(112vh, 780px); overflow: hidden; pointer-events: none; opacity: 0; transform: scale(.78) translateX(12%); transform-origin: bottom right; }
+.hero-flare-video::before { content: ""; position: absolute; z-index: -1; inset: -36%; background: radial-gradient(circle at 68% 58%, rgba(255,37,18,.7) 0%, rgba(229,48,46,.36) 18%, rgba(229,48,46,.12) 38%, transparent 68%); filter: blur(32px); }
+.hero-flare-video.is-visible { animation: flare-reveal 920ms cubic-bezier(.23,1,.32,1) forwards; }
+.hero-flare-video video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 92% 77%; filter: contrast(1.55) saturate(1.78) brightness(1.34) drop-shadow(0 0 28px rgba(255,31,16,.95)) drop-shadow(0 0 90px rgba(229,48,46,.72)); transform: scale(2.25); transform-origin: 86% 77%; }
 .nav-line, .footer-line { display: flex; align-items: center; justify-content: space-between; color: rgba(245,242,237,0.62); font-size: 0.62rem; font-weight: 600; letter-spacing: .17em; }
 .nav-label, .nav-date { display: flex; align-items: center; gap: .65rem; margin: 0; }
 .brand-mark { position: relative; display: inline-block; width: 1.5rem; height: 1.5rem; border: 1px solid #e5302e; border-radius: 50%; box-shadow: 0 0 15px rgba(229,48,46,.42); }
@@ -130,14 +131,15 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 .footer-mark b { top: -.29rem; right: -.05rem; font-size: .36rem; }
 .footer-line i { height: 1px; flex: 1; background: rgba(255,255,255,.1); }
 
-@keyframes flare-reveal { from { opacity: 0; transform: scale(.88) translateX(7%); } to { opacity: 1; transform: scale(1) translateX(0); } }
+@keyframes flare-reveal { from { opacity: 0; transform: scale(.78) translateX(12%); } to { opacity: 1; transform: scale(1) translateX(0); } }
 
 @media (max-width: 760px) {
   .hero { min-height: 48rem; padding-top: 1.5rem; }
   .nav-date { font-size: .52rem; letter-spacing: .12em; }
   .hero-content { padding: 5rem 0 7rem; justify-content: flex-start; }
   h1 { max-width: 9.5ch; font-size: clamp(2.75rem, 13.3vw, 4.15rem); }
-  .hero-flare-video { right: -47vw; bottom: -.4rem; width: 175vw; }
+  .hero-flare-video { top: 56%; right: -41vw; bottom: auto; width: 87vw; height: 67vh; }
+  .hero-flare-video video { object-position: 92% 79%; transform: scale(2.5); transform-origin: 86% 80%; }
   .flare-caption { margin-bottom: 1.1rem; }
   .details { padding-top: 5.2rem; }
   .details-intro { display: block; margin-bottom: 2rem; }
