@@ -1,17 +1,8 @@
 /**
- * Minimal Flare Afterparty — English wedding copy framed by generous black space and one continuously burning red flare.
+ * Minimal Flare Afterparty — pitch-black hero with a real moving hand-held flare as the only light source.
  */
 import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
-import { useEffect, useState, type CSSProperties } from "react";
-
-const sparks = Array.from({ length: 28 }, (_, index) => ({
-  id: index,
-  angle: `${-72 + ((index * 37) % 144)}deg`,
-  distance: `${32 + ((index * 23) % 122)}px`,
-  delay: `${(index % 10) * -0.42}s`,
-  duration: `${1.2 + (index % 5) * 0.22}s`,
-  size: `${2 + (index % 3)}px`,
-}));
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -30,30 +21,13 @@ export default function Home() {
   return (
     <main className="minimal-invite">
       <div className="ambient-noise" aria-hidden="true" />
-      <div className="persistent-flare" aria-hidden="true">
-        <div className="flare-haze" />
-        <div className="flare-smoke smoke-one" />
-        <div className="flare-smoke smoke-two" />
-        <div className="flare-fire"><span /><span /><span /></div>
-        <div className="flare-core" />
-        <div className="flare-handle" />
-        <div className="flare-sparks">
-          {sparks.map((spark) => (
-            <i
-              key={spark.id}
-              style={{
-                "--spark-angle": spark.angle,
-                "--spark-distance": spark.distance,
-                "--spark-delay": spark.delay,
-                "--spark-duration": spark.duration,
-                "--spark-size": spark.size,
-              } as CSSProperties}
-            />
-          ))}
-        </div>
-      </div>
 
       <section className="hero" aria-labelledby="invite-title">
+        <div className="hero-flare-video" aria-hidden="true">
+          <video autoPlay loop muted playsInline preload="auto">
+            <source src="/manus-storage/realistic-red-flare-hero-loop_3816664d.mp4" type="video/mp4" />
+          </video>
+        </div>
         <header className="nav-line">
           <p className="nav-label"><span className="brand-mark" aria-hidden="true"><i /><b>✦</b></span> HELWAN × MENOFIA</p>
           <p className="nav-date">FRI / 21 AUG / 2026</p>
@@ -78,18 +52,20 @@ export default function Home() {
       <section id="details" className="details" aria-labelledby="details-title">
         <div className="details-intro">
           <p className="overline">THE NIGHT&apos;S RULES</p>
-          <h2 id="details-title">Show up. Stay loud.</h2>
+          <h2 id="details-title">SHOW UP.<br /><i>STAY LOUD.</i></h2>
         </div>
 
         <div className="info-grid">
           <article className="glass-panel featured-panel">
             <span className="panel-number">01</span>
+            <span className="pass-stamp" aria-hidden="true"><i /><b>✦</b></span>
             <p className="panel-label">THE WHEN</p>
             <p className="date-line">Friday <strong>21 August</strong></p>
             <p className="panel-meta">2026 · The night opens at 7:00 PM</p>
           </article>
           <article className="glass-panel">
             <span className="panel-number">02</span>
+            <span className="pass-stamp" aria-hidden="true"><i /><b>✦</b></span>
             <MapPin size={18} strokeWidth={1.8} className="panel-icon" />
             <p className="panel-label">THE WHERE</p>
             <p className="panel-copy">The Bride&apos;s House</p>
@@ -97,6 +73,7 @@ export default function Home() {
           </article>
           <article className="glass-panel">
             <span className="panel-number">03</span>
+            <span className="pass-stamp" aria-hidden="true"><i /><b>✦</b></span>
             <Music2 size={18} strokeWidth={1.8} className="panel-icon" />
             <p className="panel-label">THE ENERGY</p>
             <p className="panel-copy">No soft-launching.</p>
@@ -116,7 +93,7 @@ export default function Home() {
       </section>
 
       <footer className="footer-line">
-        <span>MADE FOR A VERY GOOD NIGHT</span><i /><span>WITH LOVE</span>
+        <span>MADE FOR A VERY GOOD NIGHT</span><span className="footer-mark" aria-hidden="true"><i /><b>✦</b></span><i /><span>WITH LOVE</span>
       </footer>
     </main>
   );
