@@ -87,3 +87,11 @@
 - [x] Replace the existing hero headline with the requested Excel-and-calculator line.
 - [x] Balance the headline’s line breaks for desktop and mobile.
 - [x] Verify the new headline remains clear in the flare-lit Hero.
+
+## Sa‘idi Turban Cursor
+
+- [x] Create a compact turban-and-cane cursor asset with a clear pointer hotspot.
+- [x] Apply the custom cursor to the invitation on desktop pointer devices.
+- [x] Provide a distinct hover cursor for interactive controls.
+- [x] Preserve the system cursor on touch devices and accessibility-reduced environments.
+- [x] Verify cursor behavior across the main page and controls.
