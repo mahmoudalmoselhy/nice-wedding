@@ -1,31 +1,17 @@
 /**
- * Shaabi Screenprint Parade — an effects-first, photo-free Egyptian wedding invitation built as a lively vertical celebration.
+ * Minimal Flare Afterparty — English wedding copy framed by generous black space and one continuously burning red flare.
  */
-import { CalendarDays, ChevronDown, Clock3, Heart, MapPin, Music2, Sparkles } from "lucide-react";
+import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState, type CSSProperties } from "react";
 
-const lightBulbs = [
-  { left: "7%", color: "#F5D90A", delay: "0s" },
-  { left: "16%", color: "#2AB7A9", delay: "0.8s" },
-  { left: "26%", color: "#EA416C", delay: "0.2s" },
-  { left: "37%", color: "#F28C19", delay: "1.2s" },
-  { left: "63%", color: "#F5D90A", delay: "0.5s" },
-  { left: "74%", color: "#EA416C", delay: "1.5s" },
-  { left: "84%", color: "#2AB7A9", delay: "0.4s" },
-  { left: "93%", color: "#F28C19", delay: "1.1s" },
-];
-
-const confetti = Array.from({ length: 18 }, (_, index) => ({
+const sparks = Array.from({ length: 28 }, (_, index) => ({
   id: index,
-  left: `${(index * 17 + 5) % 96}%`,
-  top: `${(index * 31 + 11) % 86}%`,
-  delay: `${(index % 6) * -0.65}s`,
-  duration: `${5.3 + (index % 5) * 0.62}s`,
-  rotate: `${index % 2 === 0 ? 30 : -30}deg`,
-  color: ["#F5D90A", "#E64428", "#2AB7A9", "#EA416C"][index % 4],
+  angle: `${-72 + ((index * 37) % 144)}deg`,
+  distance: `${32 + ((index * 23) % 122)}px`,
+  delay: `${(index % 10) * -0.42}s`,
+  duration: `${1.2 + (index % 5) * 0.22}s`,
+  size: `${2 + (index % 3)}px`,
 }));
-
-const marqueeWords = ["YA LEIL YA EIN", "•", "CELEBRATE LOUD", "•", "HELWAN × MENOFIA", "•", "DANCE TILL LATE", "•"];
 
 export default function Home() {
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -33,149 +19,104 @@ export default function Home() {
 
   useEffect(() => {
     const weddingDate = new Date("2026-08-21T19:00:00+03:00");
-    const updateCountdown = () => {
-      const difference = weddingDate.getTime() - Date.now();
-      setDaysLeft(Math.max(0, Math.ceil(difference / 86_400_000)));
-    };
+    const updateCountdown = () => setDaysLeft(Math.max(0, Math.ceil((weddingDate.getTime() - Date.now()) / 86_400_000)));
     updateCountdown();
-    const timer = window.setInterval(updateCountdown, 60_000);
-    return () => window.clearInterval(timer);
+    const interval = window.setInterval(updateCountdown, 60_000);
+    return () => window.clearInterval(interval);
   }, []);
 
-  const scrollToDetails = () => {
-    document.getElementById("details")?.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
+  const scrollToDetails = () => document.getElementById("details")?.scrollIntoView({ behavior: "smooth", block: "center" });
 
   return (
-    <main className="invite-shell">
-      <div className="screenprint-grain" aria-hidden="true" />
-      <div className="confetti-pattern" aria-hidden="true" />
-      <div className="horizon-glow" aria-hidden="true" />
-
-      <section className="hero-stage" aria-labelledby="invite-title">
-        <div className="festoon-strip" aria-hidden="true">
-          <img src="/manus-storage/masr-wedding-festoons_cf515008.png" alt="" />
-        </div>
-        <div className="bulb-wire" aria-hidden="true" />
-        {lightBulbs.map((bulb) => (
-          <span
-            key={bulb.left}
-            className="light-bulb"
-            style={{ left: bulb.left, backgroundColor: bulb.color, animationDelay: bulb.delay } as CSSProperties}
-            aria-hidden="true"
-          />
-        ))}
-
-        {confetti.map((piece) => (
-          <span
-            key={piece.id}
-            className="confetti-piece"
-            style={{
-              left: piece.left,
-              top: piece.top,
-              backgroundColor: piece.color,
-              animationDelay: piece.delay,
-              animationDuration: piece.duration,
-              transform: `rotate(${piece.rotate})`,
-            } as CSSProperties}
-            aria-hidden="true"
-          />
-        ))}
-
-        <header className="top-line">
-          <div className="eyebrow"><Sparkles size={14} strokeWidth={2.7} /> A wedding night invitation <Sparkles size={14} strokeWidth={2.7} /></div>
-          {daysLeft !== null && <div className="countdown-pill">{daysLeft === 0 ? "Tonight is the night" : `${daysLeft} days to go`}</div>}
-        </header>
-
-        <div className="hero-copy">
-          <div className="mark-wrap">
-            <img src="/manus-storage/masr-wedding-mark_0fe68b72.png" alt="Two celebratory rings intertwined" />
-          </div>
-          <p className="kicker">TWO HOMETOWNS. ONE VERY LOUD NIGHT.</p>
-          <h1 id="invite-title">
-            <span>The only day</span>
-            <span>when <em>1 + 1</em> = infinity.</span>
-          </h1>
-          <div className="location-callout">
-            <span className="mini-star">✦</span>
-            <p>Helwan + Menofia are here to rule</p>
-            <span className="mini-star">✦</span>
-          </div>
-          <button className="scroll-cta" onClick={scrollToDetails} type="button">
-            <span>Mark your calendar</span>
-            <ChevronDown size={18} strokeWidth={3} />
-          </button>
-        </div>
-
-        <div className="bottom-spark" aria-hidden="true">✦</div>
-      </section>
-
-      <section className="ticker-band" aria-label="Celebration messages">
-        <div className="ticker-track">
-          {[...marqueeWords, ...marqueeWords].map((word, index) => (
-            <span key={`${word}-${index}`} className={word === "•" ? "ticker-dot" : ""}>{word}</span>
+    <main className="minimal-invite">
+      <div className="ambient-noise" aria-hidden="true" />
+      <div className="persistent-flare" aria-hidden="true">
+        <div className="flare-haze" />
+        <div className="flare-smoke smoke-one" />
+        <div className="flare-smoke smoke-two" />
+        <div className="flare-fire"><span /><span /><span /></div>
+        <div className="flare-core" />
+        <div className="flare-handle" />
+        <div className="flare-sparks">
+          {sparks.map((spark) => (
+            <i
+              key={spark.id}
+              style={{
+                "--spark-angle": spark.angle,
+                "--spark-distance": spark.distance,
+                "--spark-delay": spark.delay,
+                "--spark-duration": spark.duration,
+                "--spark-size": spark.size,
+              } as CSSProperties}
+            />
           ))}
         </div>
+      </div>
+
+      <section className="hero" aria-labelledby="invite-title">
+        <header className="nav-line">
+          <p className="nav-label"><span className="brand-mark" aria-hidden="true"><i /><b>✦</b></span> HELWAN × MENOFIA</p>
+          <p className="nav-date">FRI / 21 AUG / 2026</p>
+        </header>
+
+        <div className="hero-content">
+          <p className="overline">NOT A QUIET NIGHT.</p>
+          <h1 id="invite-title">
+            <span>The only day</span>
+            <span>when <i>1 + 1</i> = infinity.</span>
+          </h1>
+          <div className="hero-divider"><span /><b>✦</b><span /></div>
+          <p className="statement">Helwan + Menofia are here to rule. Egyptian energy, no volume limit.</p>
+          <button type="button" className="liquid-button hero-button" onClick={scrollToDetails}>
+            <span>Save the night</span><ArrowDown size={17} strokeWidth={2.1} />
+          </button>
+        </div>
+
+        <div className="flare-caption" aria-hidden="true"><span /> ONE RED FLARE. ALL NIGHT. <span /></div>
       </section>
 
-      <section id="details" className="details-stage" aria-labelledby="details-title">
-        <div className="section-whisper">SAVE THE DATE / NO EXCUSES ACCEPTED</div>
-        <div className="ticket-card">
-          <div className="ticket-corner ticket-corner-left" aria-hidden="true" />
-          <div className="ticket-corner ticket-corner-right" aria-hidden="true" />
+      <section id="details" className="details" aria-labelledby="details-title">
+        <div className="details-intro">
+          <p className="overline">THE NIGHT&apos;S RULES</p>
+          <h2 id="details-title">Show up. Stay loud.</h2>
+        </div>
 
-          <div className="ticket-heading">
-            <div className="stamp">FRI</div>
-            <div>
-              <p className="ticket-label">THE BIG NIGHT</p>
-              <h2 id="details-title">21 AUGUST</h2>
-              <p className="ticket-year">2026</p>
-            </div>
-            <div className="ticket-glyph" aria-hidden="true">★</div>
-          </div>
+        <div className="info-grid">
+          <article className="glass-panel featured-panel">
+            <span className="panel-number">01</span>
+            <p className="panel-label">THE WHEN</p>
+            <p className="date-line">Friday <strong>21 August</strong></p>
+            <p className="panel-meta">2026 · The night opens at 7:00 PM</p>
+          </article>
+          <article className="glass-panel">
+            <span className="panel-number">02</span>
+            <MapPin size={18} strokeWidth={1.8} className="panel-icon" />
+            <p className="panel-label">THE WHERE</p>
+            <p className="panel-copy">The Bride&apos;s House</p>
+            <p className="panel-meta">Directions shared with the family only</p>
+          </article>
+          <article className="glass-panel">
+            <span className="panel-number">03</span>
+            <Music2 size={18} strokeWidth={1.8} className="panel-icon" />
+            <p className="panel-label">THE ENERGY</p>
+            <p className="panel-copy">No soft-launching.</p>
+            <p className="panel-meta">Bring your brightest self—and your loudest clap.</p>
+          </article>
+        </div>
 
-          <div className="ticket-rule" />
-
-          <div className="detail-list">
-            <article className="detail-item">
-              <span className="detail-icon"><Clock3 size={19} strokeWidth={2.7} /></span>
-              <div>
-                <p className="detail-title">Doors open</p>
-                <p className="detail-value">7:00 PM</p>
-              </div>
-            </article>
-            <article className="detail-item">
-              <span className="detail-icon"><MapPin size={19} strokeWidth={2.7} /></span>
-              <div>
-                <p className="detail-title">Where we gather</p>
-                <p className="detail-value">The Bride&apos;s House</p>
-              </div>
-            </article>
-            <article className="detail-item">
-              <span className="detail-icon"><Music2 size={19} strokeWidth={2.7} /></span>
-              <div>
-                <p className="detail-title">Dress code</p>
-                <p className="detail-value">Bring your brightest self</p>
-              </div>
-            </article>
-          </div>
-
-          <button className="details-toggle" onClick={() => setDetailsOpen((open) => !open)} type="button" aria-expanded={detailsOpen}>
-            <CalendarDays size={17} strokeWidth={2.8} />
-            {detailsOpen ? "See you there" : "One more thing"}
-            <span className={detailsOpen ? "plus-sign is-open" : "plus-sign"}>+</span>
+        <div className="action-row">
+          <button type="button" className="liquid-button" onClick={() => setDetailsOpen((open) => !open)} aria-expanded={detailsOpen}>
+            {detailsOpen ? <Check size={17} strokeWidth={2.2} /> : <CalendarPlus size={17} strokeWidth={2.2} />}
+            <span>{detailsOpen ? "See you there" : "One more thing"}</span>
           </button>
-
-          <div className={detailsOpen ? "secret-note visible" : "secret-note"} aria-hidden={!detailsOpen}>
-            <Heart size={17} fill="currentColor" />
-            <p>Bring your loudest clap. We&apos;ll bring the night.</p>
+          <div className={detailsOpen ? "note is-open" : "note"} aria-hidden={!detailsOpen}>
+            <Sparkles size={15} strokeWidth={1.9} /><p>We’ll bring the night. You bring the people.</p>
           </div>
         </div>
       </section>
 
-      <footer className="invite-footer">
-        <p>With love, music, and a proper Egyptian celebration.</p>
-        <span className="footer-sparkles">✦ ✦ ✦</span>
+      <footer className="footer-line">
+        <span>MADE FOR A VERY GOOD NIGHT</span><i /><span>WITH LOVE</span>
       </footer>
     </main>
   );

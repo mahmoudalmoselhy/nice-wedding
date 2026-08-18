@@ -1,5 +1,5 @@
 /**
- * Shaabi Screenprint Parade — global app shell: a dark indigo canvas with high-contrast Egyptian wedding print energy.
+ * Minimal Flare Afterparty — restrained black canvas, single red flare, and glass controls.
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
