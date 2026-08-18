@@ -14,3 +14,11 @@
 - [x] Replace the illustrated flare with the realistic hand-held flare scene.
 - [x] Add subtle continuous smoke, ember, and red-light motion without weakening the real photo treatment.
 - [x] Verify the black hero composition and flare visibility on desktop and mobile.
+
+## Blackout Flare Pass
+
+- [x] Remove nonessential backgrounds, haze, card fills, and button fills.
+- [x] Convert all action controls to outline-only buttons.
+- [x] Delay the realistic flare reveal by two seconds after page load.
+- [x] Increase the flare scale and visual dominance without harming text readability.
+- [x] Verify the stark black layout on desktop and mobile.

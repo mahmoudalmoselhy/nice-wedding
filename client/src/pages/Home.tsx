@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [daysLeft, setDaysLeft] = useState<number | null>(null);
+  const [flareVisible, setFlareVisible] = useState(false);
 
   useEffect(() => {
     const weddingDate = new Date("2026-08-21T19:00:00+03:00");
@@ -16,14 +17,18 @@ export default function Home() {
     return () => window.clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const revealTimer = window.setTimeout(() => setFlareVisible(true), 2000);
+    return () => window.clearTimeout(revealTimer);
+  }, []);
+
   const scrollToDetails = () => document.getElementById("details")?.scrollIntoView({ behavior: "smooth", block: "center" });
 
   return (
     <main className="minimal-invite">
-      <div className="ambient-noise" aria-hidden="true" />
 
       <section className="hero" aria-labelledby="invite-title">
-        <div className="hero-flare-video" aria-hidden="true">
+        <div className={flareVisible ? "hero-flare-video is-visible" : "hero-flare-video"} aria-hidden="true">
           <video autoPlay loop muted playsInline preload="auto">
             <source src="/manus-storage/realistic-red-flare-hero-loop_3816664d.mp4" type="video/mp4" />
           </video>
