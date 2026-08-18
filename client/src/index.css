@@ -1,5 +1,5 @@
 /*
- * Flare-lit wedding invitation — cinematic firelight hero paired with playful, off-kilter wedding night rules.
+ * Flare-lit wedding invitation — a prominent Helwan-Menofia statement and playful Arabic night rules in black and red.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -96,6 +96,7 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 .hero-divider span { height: 1px; flex: 1; background: linear-gradient(90deg, rgba(229,48,46,0), #e5302e, rgba(229,48,46,0)); }
 .hero-divider b { font-size: .85rem; font-weight: 400; }
 .statement { max-width: 36ch; margin: 0; color: rgba(245,242,237,.76); font-size: clamp(.88rem, 1.5vw, 1.05rem); font-weight: 500; letter-spacing: .025em; }
+.statement-world { max-width: 26ch; font-family: "Archivo Black", sans-serif; font-size: clamp(1.35rem, 2.6vw, 2.15rem); font-weight: 400; line-height: .96; letter-spacing: -.045em; }
 .hero-button { margin-top: 2.05rem; }
 .flare-caption { position: relative; z-index: 3; display: flex; align-items: center; justify-content: flex-end; gap: .55rem; color: rgba(245,242,237,.42); font-size: .58rem; font-weight: 700; letter-spacing: .2em; }
 .flare-caption span { width: 1.8rem; height: 1px; background: rgba(245,242,237,.25); }
@@ -193,6 +194,18 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 .rules-action { width: min(100%, 1080px); justify-content: flex-start; margin-top: 2.7rem; }
 .rules-action .liquid-button { border-color: #e5302e; color: #f5f2ed; }
 .rules-action .liquid-button:hover { color: #e5302e; border-color: #f5f2ed; }
+.arabic-copy { font-family: "Cairo", "Manrope", sans-serif; direction: rtl; }
+.rules-head .arabic-copy { text-align: right; }
+.rules-head .overline { font-weight: 800; letter-spacing: 0; }
+.rules-whisper { max-width: 23ch; font-size: .77rem; line-height: 1.65; }
+.rules-head .arabic-title { font-family: "Cairo", "Manrope", sans-serif; font-size: clamp(2.2rem, 4.7vw, 4.8rem); font-weight: 800; letter-spacing: -.055em; line-height: 1.02; }
+.rule-label.arabic-copy { flex-direction: row-reverse; justify-content: flex-end; letter-spacing: 0; font-size: .74rem; font-weight: 800; }
+.rule-main.arabic-copy, .rule-side-note.arabic-copy { text-align: right; }
+.rule-main.arabic-copy p { font-family: "Cairo", "Manrope", sans-serif; font-size: clamp(1.35rem, 2.55vw, 2.25rem); font-weight: 800; letter-spacing: -.045em; line-height: 1.05; }
+.rule-main.arabic-copy small { font-size: .76rem; font-weight: 600; line-height: 1.7; }
+.rule-side-note.arabic-copy { font-size: .62rem; font-weight: 700; letter-spacing: 0; line-height: 1.8; }
+.rules-action .arabic-copy { letter-spacing: 0; font-size: .78rem; font-weight: 800; }
+.note .arabic-copy { direction: rtl; font-family: "Cairo", "Manrope", sans-serif; }
 
 @media (max-width: 760px) {
   .night-rules { padding-top: 4.5rem; }
@@ -209,6 +222,10 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
   .rule-side-note { display: none; }
   .rule-row::after { right: 1.05rem; width: 2.5rem; }
   .rules-action { margin-top: 2rem; }
+  .statement-world { max-width: 18ch; font-size: clamp(1.28rem, 6vw, 1.78rem); }
+  .rules-head .arabic-title { font-size: clamp(2.05rem, 11vw, 3.4rem); }
+  .rule-main.arabic-copy p { font-size: 1.5rem; }
+  .rule-main.arabic-copy small { font-size: .7rem; line-height: 1.65; }
 }
 
 /* Layer-Driven Firelight Text: the copy is always present, but its ink starts black and is illuminated by the flare. */
@@ -242,6 +259,7 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 .hero.is-lit .hero-divider { animation: flare-ink-divider 520ms 5s cubic-bezier(.23,1,.32,1) forwards; }
 .hero.is-lit .hero-divider span { animation: flare-divider-line 520ms 5s cubic-bezier(.23,1,.32,1) forwards; }
 .hero.is-lit .statement { animation: flare-ink-soft 580ms 5.2s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .statement-world { animation: flare-ink-world 680ms 5.2s cubic-bezier(.23,1,.32,1) forwards; }
 .hero.is-lit .hero-button { animation: flare-ink-outline 560ms 5.45s cubic-bezier(.23,1,.32,1) forwards; }
 .hero.is-lit .flare-caption { animation: flare-ink-caption 560ms 5.7s cubic-bezier(.23,1,.32,1) forwards; }
 .hero.is-lit .flare-caption span { animation: flare-caption-line 560ms 5.7s cubic-bezier(.23,1,.32,1) forwards; }
@@ -254,6 +272,7 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 @keyframes flare-ink-red { from { color: #000000; text-shadow: none; } to { color: #e5302e; text-shadow: 0 0 18px rgba(229,48,46,.23); } }
 @keyframes flare-ink-white { from { color: #000000; text-shadow: none; } to { color: #f5f2ed; text-shadow: 0 0 24px rgba(255,80,55,.12); } }
 @keyframes flare-ink-soft { from { color: #000000; } to { color: rgba(245,242,237,.76); } }
+@keyframes flare-ink-world { from { color: #000000; text-shadow: none; } to { color: #f5f2ed; text-shadow: 0 0 22px rgba(229,48,46,.22); } }
 @keyframes flare-ink-divider { from { color: #000000; } to { color: #e5302e; } }
 @keyframes flare-divider-line { from { background: #000000; } to { background: linear-gradient(90deg, rgba(229,48,46,0), #e5302e, rgba(229,48,46,0)); } }
 @keyframes flare-ink-outline { from { color: #000000; border-color: #000000; } to { color: #ffffff; border-color: rgba(255,255,255,.58); } }

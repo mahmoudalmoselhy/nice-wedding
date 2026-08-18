@@ -73,3 +73,11 @@
 - [x] Rewrite the supporting English copy with humorous, friend-to-friend energy.
 - [x] Keep date, location, and practical details clear within the fun treatment.
 - [x] Verify the redesigned section on desktop and mobile.
+
+## Arabic Night Rules & Hero Statement
+
+- [x] Translate all playful night-rules section copy into Arabic.
+- [x] Preserve Arabic reading direction and hierarchy within the black-and-red layout.
+- [x] Replace the hero statement with “Helwan and Menofia are here to rule the world.”
+- [x] Increase the hero statement’s size and visual prominence.
+- [x] Verify Arabic legibility and hero emphasis on desktop and mobile.

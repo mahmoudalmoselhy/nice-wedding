@@ -1,5 +1,5 @@
 /**
- * Flare-lit wedding invitation — cinematic hero plus a playful, friend-to-friend night-rules section.
+ * Flare-lit wedding invitation — cinematic hero with a prominent Helwan-Menofia statement and Arabic night rules.
  */
 import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -46,7 +46,7 @@ export default function Home() {
             <span>when <i>1 + 1</i> = infinity.</span>
           </h1>
           <div className="hero-divider"><span /><b>✦</b><span /></div>
-          <p className="statement">Helwan + Menofia are here to rule. Egyptian energy, no volume limit.</p>
+          <p className="statement statement-world">Helwan and Menofia are here to rule the world.</p>
           <button type="button" className="liquid-button hero-button" onClick={scrollToDetails}>
             <span>Save the night</span><ArrowDown size={17} strokeWidth={2.1} />
           </button>
@@ -57,52 +57,52 @@ export default function Home() {
 
       <section id="details" className="details night-rules" aria-labelledby="details-title">
         <div className="rules-head">
-          <div>
-            <p className="overline">THE NIGHT&apos;S VERY SERIOUS AGENDA</p>
-            <p className="rules-whisper">Read this like your aunt is watching.</p>
+          <div className="arabic-copy">
+            <p className="overline">أجندة الليلة المهمة جدًا</p>
+            <p className="rules-whisper">اقرأ كأن طنط بتراقبك.</p>
           </div>
-          <h2 id="details-title">THREE THINGS.<br /><i>ZERO EXCUSES.</i></h2>
+          <h2 id="details-title" className="arabic-copy arabic-title">3 حاجات.<br /><i>مفيش أعذار.</i></h2>
         </div>
 
         <div className="rule-list">
           <article className="rule-row rule-row-date">
             <span className="rule-number">01</span>
-            <div className="rule-label"><CalendarPlus size={18} strokeWidth={2.1} /> TIME CHECK</div>
-            <div className="rule-main">
-              <p>FRIDAY, <strong>21 AUGUST.</strong></p>
-              <small>Doors open at 7 PM. Arrive before the playlist judges you.</small>
+            <div className="rule-label arabic-copy"><CalendarPlus size={18} strokeWidth={2.1} /> الموعد</div>
+            <div className="rule-main arabic-copy">
+              <p>الجمعة، <strong>21 أغسطس.</strong></p>
+              <small>الباب هيفتح 7. تعالى بدري قبل ما البلايليست تحكم عليك.</small>
             </div>
-            <span className="rule-side-note">NO FASHIONABLY LATE<br />BEHAVIOUR, PLEASE.</span>
+            <span className="rule-side-note arabic-copy">مفيش تأخير شيك<br />لو سمحت.</span>
           </article>
 
           <article className="rule-row rule-row-place">
             <span className="rule-number">02</span>
-            <div className="rule-label"><MapPin size={18} strokeWidth={2.1} /> LOCATION</div>
-            <div className="rule-main">
-              <p>THE <strong>BRIDE&apos;S HOUSE.</strong></p>
-              <small>Follow the family group. Google Maps has not been invited.</small>
+            <div className="rule-label arabic-copy"><MapPin size={18} strokeWidth={2.1} /> المكان</div>
+            <div className="rule-main arabic-copy">
+              <p>بيت <strong>العروسة.</strong></p>
+              <small>امشي ورا جروب العيلة. جوجل مابس مش معزوم.</small>
             </div>
-            <span className="rule-side-note">IF LOST, CALL<br />YOUR FAVORITE COUSIN.</span>
+            <span className="rule-side-note arabic-copy">لو اتوهت، كلم<br />ابن خالتك المفضل.</span>
           </article>
 
           <article className="rule-row rule-row-vibe">
             <span className="rule-number">03</span>
-            <div className="rule-label"><Music2 size={18} strokeWidth={2.1} /> VIBE CHECK</div>
-            <div className="rule-main">
-              <p>ARRIVE CUTE.<br /><strong>LEAVE HOARSE.</strong></p>
-              <small>Singing optional. Clapping is absolutely not.</small>
+            <div className="rule-label arabic-copy"><Music2 size={18} strokeWidth={2.1} /> المود</div>
+            <div className="rule-main arabic-copy">
+              <p>تعالى شيك.<br /><strong>وامشي صوتك رايح.</strong></p>
+              <small>الغنا اختياري. التصفيق إجباري.</small>
             </div>
-            <span className="rule-side-note">BRING THE ENERGY.<br />WE&apos;LL HANDLE THE REST.</span>
+            <span className="rule-side-note arabic-copy">هات الطاقة.<br />والباقي علينا.</span>
           </article>
         </div>
 
         <div className="action-row rules-action">
           <button type="button" className="liquid-button" onClick={() => setDetailsOpen((open) => !open)} aria-expanded={detailsOpen}>
             {detailsOpen ? <Check size={17} strokeWidth={2.2} /> : <Sparkles size={17} strokeWidth={2.2} />}
-            <span>{detailsOpen ? "Good. You got the memo." : "Okay, I’m emotionally prepared"}</span>
+            <span className="arabic-copy" dir="rtl">{detailsOpen ? "تمام، وصلت الفكرة." : "تمام، أنا جاهز نفسيًا"}</span>
           </button>
           <div className={detailsOpen ? "note is-open" : "note"} aria-hidden={!detailsOpen}>
-            <Sparkles size={15} strokeWidth={1.9} /><p>Excellent. Your attendance has been spiritually noted.</p>
+            <Sparkles size={15} strokeWidth={1.9} /><p className="arabic-copy" dir="rtl">ممتاز. حضورك اتسجل عندنا روحيًا.</p>
           </div>
         </div>
       </section>
