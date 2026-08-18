@@ -1,5 +1,5 @@
 /**
- * Flare-lit wedding invitation — cinematic hero with a prominent Helwan-Menofia statement and Arabic night rules.
+ * Flare-lit wedding invitation — cinematic hero with an Excel-and-calculator headline and Arabic night rules.
  */
 import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -41,9 +41,11 @@ export default function Home() {
 
         <div className="hero-content">
           <p className="overline">NOT A QUIET NIGHT.</p>
-          <h1 id="invite-title">
-            <span>The only day</span>
-            <span>when <i>1 + 1</i> = infinity.</span>
+          <h1 id="invite-title" className="excel-headline">
+            <span>The only relation</span>
+            <span>in which all problems</span>
+            <span>can be solved using</span>
+            <span><i>Excel and a calculator.</i></span>
           </h1>
           <div className="hero-divider"><span /><b>✦</b><span /></div>
           <p className="statement statement-world">Helwan and Menofia are here to rule the world.</p>

@@ -1,5 +1,5 @@
 /*
- * Flare-lit wedding invitation — a prominent Helwan-Menofia statement and playful Arabic night rules in black and red.
+ * Flare-lit wedding invitation — an oversized Excel-and-calculator headline and playful Arabic night rules in black and red.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -92,6 +92,7 @@ button { font: inherit; cursor: pointer; }
 h1 { max-width: 12ch; margin: 0; color: #f5f2ed; font-family: "Archivo Black", sans-serif; font-size: clamp(3.05rem, 7.05vw, 7.2rem); font-weight: 400; line-height: .91; letter-spacing: -.065em; text-wrap: balance; }
 h1 span { display: block; }
 h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowrap; text-shadow: 0 0 26px rgba(229,48,46,.28); }
+.excel-headline { max-width: 16ch; font-size: clamp(2.75rem, 6vw, 6.35rem); }
 .hero-divider { display: flex; align-items: center; width: min(100%, 29rem); gap: .65rem; margin: 2rem 0 1.3rem; color: #e5302e; }
 .hero-divider span { height: 1px; flex: 1; background: linear-gradient(90deg, rgba(229,48,46,0), #e5302e, rgba(229,48,46,0)); }
 .hero-divider b { font-size: .85rem; font-weight: 400; }
@@ -153,6 +154,7 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
   .nav-date { font-size: .52rem; letter-spacing: .12em; }
   .hero-content { padding: 5rem 0 7rem; justify-content: flex-start; }
   h1 { max-width: 9.5ch; font-size: clamp(2.75rem, 13.3vw, 4.15rem); }
+  .excel-headline { max-width: 14ch; font-size: clamp(2.35rem, 10.6vw, 3.65rem); }
   .hero-flare-video video { object-position: 82% center; filter: contrast(1.38) saturate(1.65) brightness(1.08); }
   .flare-caption { margin-bottom: 1.1rem; }
   .details { padding-top: 5.2rem; }

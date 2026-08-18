@@ -110,3 +110,5 @@
 في نسخة **Playful Night Rules**، تتحول تفاصيل الموعد من بطاقات فعالية رسمية إلى أجندة ليلة مكتوبة بصوت صحاب: أسطر غير متساوية، أرقام كبيرة، وملاحظات جانبية ساخرة. تظل المعلومة العملية واضحة، لكن الصياغة تكون مثل: “Arrive before the playlist judges you” و“Google Maps has not been invited.”
 
 في نسخة **Arabic Night Rules & Hero Statement**، تتحول كل صياغة سكشن القواعد إلى عربية خفيفة تقرأ طبيعيًا من اليمين لليسار، مع خط عربي واضح يحافظ على الحدة البصرية. جملة الـHero تصبح “Helwan and Menofia are here to rule the world.” وتكبر لتظهر كتصريح مستقل بعد العنوان الرئيسي.
+
+في نسخة **Excel Headline Update**، يستبدل العنوان الرئيسي بجملة: “The only relation in which all problems can be solved using Excel and a calculator.” تُقسم الجملة إلى أسطر قصيرة حادة، ويحمل السطر الأخير اللون الأحمر ليعمل كـpunchline بصري داخل ضوء الشمروخ.

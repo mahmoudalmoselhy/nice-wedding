@@ -81,3 +81,9 @@
 - [x] Replace the hero statement with “Helwan and Menofia are here to rule the world.”
 - [x] Increase the hero statement’s size and visual prominence.
 - [x] Verify Arabic legibility and hero emphasis on desktop and mobile.
+
+## Excel Headline Update
+
+- [x] Replace the existing hero headline with the requested Excel-and-calculator line.
+- [x] Balance the headline’s line breaks for desktop and mobile.
+- [x] Verify the new headline remains clear in the flare-lit Hero.
