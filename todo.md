@@ -95,3 +95,11 @@
 - [x] Provide a distinct hover cursor for interactive controls.
 - [x] Preserve the system cursor on touch devices and accessibility-reduced environments.
 - [x] Verify cursor behavior across the main page and controls.
+
+## Mobile Experience Polish
+
+- [x] Tighten the Hero’s mobile spacing and balance the long Excel headline.
+- [x] Improve mobile reading order and spacing for Arabic night-rule rows.
+- [x] Increase interactive touch targets and simplify mobile control layouts.
+- [x] Refine footer and small-label legibility on narrow screens.
+- [x] Verify the result at phone-width and desktop-width breakpoints.

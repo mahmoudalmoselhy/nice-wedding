@@ -1,5 +1,5 @@
 /*
- * Flare-lit wedding invitation — an oversized Excel-and-calculator headline, playful Arabic night rules, and a Sa‘idi turban cursor.
+ * Flare-lit wedding invitation — an oversized Excel-and-calculator headline, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -293,6 +293,39 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 @keyframes flare-mark-ring-light { from { border-color: #000000; } to { border-color: #f5f2ed; } }
 @keyframes flare-mark-red-light { from { border-color: #000000; } to { border-color: #e5302e; } }
 @keyframes flare-mark-star-light { from { color: #000000; } to { color: #f5f2ed; } }
+
+/* Mobile polish: preserve the dramatic flare while giving long copy, Arabic rows, and touch actions more breathing room. */
+@media (max-width: 760px) {
+  .hero { min-height: max(51rem, 100svh); padding: 1.25rem 1.25rem max(1.45rem, env(safe-area-inset-bottom)); }
+  .nav-line { gap: .75rem; font-size: .54rem; letter-spacing: .105em; }
+  .nav-label { gap: .45rem; }
+  .nav-date { max-width: 7.3rem; font-size: .48rem; line-height: 1.35; text-align: right; }
+  .brand-mark { width: 1.35rem; height: 1.35rem; }
+  .hero-content { justify-content: center; padding: 4.7rem 0 3.5rem; }
+  .hero-content .overline { margin-bottom: .9rem; font-size: .58rem; letter-spacing: .15em; }
+  .excel-headline { max-width: 15ch; font-size: clamp(2.18rem, 9.6vw, 3.2rem); line-height: .9; }
+  .hero-divider { width: min(100%, 20rem); margin: 1.5rem 0 1.05rem; }
+  .statement-world { max-width: 20ch; font-size: clamp(1.12rem, 5.5vw, 1.52rem); line-height: 1; }
+  .hero-button { width: min(100%, 21rem); min-height: 3.45rem; margin-top: 1.7rem; font-size: .7rem; }
+  .flare-caption { display: none; }
+  .night-rules { padding: 4rem 1.25rem max(4.5rem, env(safe-area-inset-bottom)); }
+  .rules-head { margin-bottom: 2.25rem; }
+  .rules-whisper { max-width: 25ch; font-size: .77rem; }
+  .rules-head .arabic-title { max-width: 9ch; margin-top: 1.35rem; font-size: clamp(2.15rem, 11.6vw, 3.3rem); }
+  .rule-list { gap: 1rem; }
+  .rule-row { grid-template-columns: 3.15rem minmax(0, 1fr); gap: .42rem .72rem; min-height: 7.55rem; padding: .9rem 1.1rem .95rem 0; }
+  .rule-number { align-items: center; padding: 0; font-size: 3.65rem; line-height: 1; }
+  .rule-label.arabic-copy { min-height: 1.25rem; font-size: .67rem; }
+  .rule-main.arabic-copy p { font-size: clamp(1.28rem, 6.15vw, 1.55rem); line-height: 1.12; }
+  .rule-main.arabic-copy small { max-width: 31ch; margin-top: .38rem; font-size: .68rem; line-height: 1.55; }
+  .rule-row::after { right: .8rem; width: 1.85rem; opacity: .78; }
+  .rules-action { width: 100%; margin-top: 1.75rem; }
+  .rules-action .liquid-button { width: min(100%, 21rem); min-height: 3.45rem; padding-inline: .95rem; font-size: .72rem; }
+  .footer-line { display: grid; grid-template-columns: 1fr auto 1fr; gap: .55rem; padding: 1.25rem 1.25rem max(1.25rem, env(safe-area-inset-bottom)); font-size: .57rem; letter-spacing: .09em; }
+  .footer-line span:first-child { text-align: left; }
+  .footer-line span:last-child { text-align: right; }
+  .footer-line i { display: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
