@@ -103,3 +103,10 @@
 - [x] Increase interactive touch targets and simplify mobile control layouts.
 - [x] Refine footer and small-label legibility on narrow screens.
 - [x] Verify the result at phone-width and desktop-width breakpoints.
+
+## Three-Second Reveal Timing
+
+- [x] Change the flare ignition delay from five seconds to three seconds.
+- [x] Shift the firelight and text-reveal sequence to the new timing.
+- [x] Keep the flare fade-in gradual rather than abrupt.
+- [x] Verify the faster reveal on desktop and mobile.

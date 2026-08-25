@@ -1,5 +1,5 @@
 /*
- * Flare-lit wedding invitation — an oversized Excel-and-calculator headline, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
+ * Flare-lit wedding invitation — a three-second cinematic flare reveal, an oversized Excel-and-calculator headline, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -263,21 +263,21 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 .hero .brand-mark::after { border-color: #000000; }
 .hero .brand-mark b { color: #000000; }
 
-.hero.is-lit .nav-line { animation: flare-ink-nav 620ms 4.1s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .hero-content .overline { animation: flare-ink-red 520ms 4.35s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .hero-content h1 { animation: flare-ink-white 820ms 4.55s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .hero-content h1 i { animation: flare-ink-red 820ms 4.55s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .hero-divider { animation: flare-ink-divider 520ms 5s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .hero-divider span { animation: flare-divider-line 520ms 5s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .statement { animation: flare-ink-soft 580ms 5.2s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .statement-world { animation: flare-ink-world 680ms 5.2s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .hero-button { animation: flare-ink-outline 560ms 5.45s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .flare-caption { animation: flare-ink-caption 560ms 5.7s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .flare-caption span { animation: flare-caption-line 560ms 5.7s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .brand-mark { animation: flare-mark-reveal 620ms 4.1s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .brand-mark::before { animation: flare-mark-ring-light 620ms 4.1s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .brand-mark::after { animation: flare-mark-red-light 620ms 4.1s cubic-bezier(.23,1,.32,1) forwards; }
-.hero.is-lit .brand-mark b { animation: flare-mark-star-light 620ms 4.1s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .nav-line { animation: flare-ink-nav 620ms 2.5s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-content .overline { animation: flare-ink-red 520ms 2.75s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-content h1 { animation: flare-ink-white 820ms 3s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-content h1 i { animation: flare-ink-red 820ms 3s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-divider { animation: flare-ink-divider 520ms 3.35s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-divider span { animation: flare-divider-line 520ms 3.35s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .statement { animation: flare-ink-soft 580ms 3.55s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .statement-world { animation: flare-ink-world 680ms 3.55s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .hero-button { animation: flare-ink-outline 560ms 3.8s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .flare-caption { animation: flare-ink-caption 560ms 4s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .flare-caption span { animation: flare-caption-line 560ms 4s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .brand-mark { animation: flare-mark-reveal 620ms 2.5s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .brand-mark::before { animation: flare-mark-ring-light 620ms 2.5s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .brand-mark::after { animation: flare-mark-red-light 620ms 2.5s cubic-bezier(.23,1,.32,1) forwards; }
+.hero.is-lit .brand-mark b { animation: flare-mark-star-light 620ms 2.5s cubic-bezier(.23,1,.32,1) forwards; }
 
 @keyframes flare-ink-nav { from { color: #000000; } to { color: rgba(245,242,237,.62); } }
 @keyframes flare-ink-red { from { color: #000000; text-shadow: none; } to { color: #e5302e; text-shadow: 0 0 18px rgba(229,48,46,.23); } }
@@ -304,6 +304,7 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
   .hero-content { justify-content: center; padding: 4.7rem 0 3.5rem; }
   .hero-content .overline { margin-bottom: .9rem; font-size: .58rem; letter-spacing: .15em; }
   .excel-headline { max-width: 15ch; font-size: clamp(2.18rem, 9.6vw, 3.2rem); line-height: .9; }
+  .excel-headline i { white-space: normal; }
   .hero-divider { width: min(100%, 20rem); margin: 1.5rem 0 1.05rem; }
   .statement-world { max-width: 20ch; font-size: clamp(1.12rem, 5.5vw, 1.52rem); line-height: 1; }
   .hero-button { width: min(100%, 21rem); min-height: 3.45rem; margin-top: 1.7rem; font-size: .7rem; }

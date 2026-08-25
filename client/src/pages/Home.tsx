@@ -1,5 +1,5 @@
 /**
- * Flare-lit wedding invitation — cinematic hero with an Excel-and-calculator headline and Arabic night rules.
+ * Flare-lit wedding invitation — a three-second blackout before the cinematic flare reveal, with an Excel-and-calculator headline and Arabic night rules.
  */
 import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const revealTimer = window.setTimeout(() => setFlareVisible(true), 5000);
+    const revealTimer = window.setTimeout(() => setFlareVisible(true), 3000);
     return () => window.clearTimeout(revealTimer);
   }, []);
 
