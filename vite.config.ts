@@ -15,6 +15,7 @@ const PROJECT_ROOT = import.meta.dirname;
 const LOG_DIR = path.join(PROJECT_ROOT, ".manus-logs");
 const MAX_LOG_SIZE_BYTES = 1 * 1024 * 1024; // 1MB per log file
 const TRIM_TARGET_BYTES = Math.floor(MAX_LOG_SIZE_BYTES * 0.6); // Trim to 60% to avoid constant re-trimming
+const IS_GITHUB_PAGES_BUILD = process.env.GITHUB_PAGES === "true";
 
 type LogSource = "browserConsole" | "networkRequests" | "sessionReplay";
 
@@ -207,7 +208,7 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   // GitHub Pages serves this public repository beneath /nice-wedding/; Manus preview remains at the root.
-  base: process.env.GITHUB_ACTIONS === "true" ? "/nice-wedding/" : "/",
+  base: IS_GITHUB_PAGES_BUILD ? "/nice-wedding/" : "/",
   plugins,
   resolve: {
     alias: {
@@ -219,7 +220,7 @@ export default defineConfig({
   envDir: path.resolve(import.meta.dirname),
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: IS_GITHUB_PAGES_BUILD ? path.resolve(import.meta.dirname, "docs") : path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
   server: {
