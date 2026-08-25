@@ -1,5 +1,5 @@
 /*
- * Flare-lit wedding invitation — a three-second cinematic flare reveal, an oversized Excel-and-calculator headline, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
+ * Flare-lit wedding invitation — a three-second cinematic flare reveal, an oversized Excel-and-calculator headline, updated Grand Hyatt Hall map details, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -218,6 +218,17 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 .rules-action .arabic-copy { letter-spacing: 0; font-size: .78rem; font-weight: 800; }
 .note .arabic-copy { direction: rtl; font-family: "Cairo", "Manrope", sans-serif; }
 
+/* Venue map ticket: practical directions in the same black, red, and printed-line language as the night rules. */
+.map-ticket { display: grid; grid-template-columns: minmax(14rem, .75fr) minmax(0, 1.25fr); gap: 1.4rem; align-items: stretch; width: min(100%, 1080px); margin: 2.5rem auto 0; padding: 1.15rem; border-top: 1px solid rgba(245,242,237,.22); border-bottom: 1px solid rgba(229,48,46,.62); border-right: .3rem solid #e5302e; background: transparent; }
+.map-ticket-copy { display: flex; flex-direction: column; justify-content: center; padding: .85rem .5rem .85rem 0; text-align: right; }
+.map-kicker { display: inline-flex; align-items: center; justify-content: flex-start; gap: .45rem; margin: 0 0 .8rem; color: #e5302e; font-size: .7rem; font-weight: 800; letter-spacing: 0; }
+.map-ticket h3 { margin: 0; color: #f5f2ed; font-family: "Cairo", "Manrope", sans-serif; font-size: clamp(1.35rem, 2.5vw, 2.28rem); font-weight: 800; line-height: 1.14; letter-spacing: -.045em; }
+.map-ticket h3 i { color: #e5302e; font-style: normal; }
+.map-ticket-copy > p:last-child { max-width: 29ch; margin: .72rem 0 0 auto; color: rgba(245,242,237,.62); font-size: .75rem; font-weight: 600; line-height: 1.75; }
+.map-frame { position: relative; min-height: 17.5rem; overflow: hidden; border: 1px solid rgba(245,242,237,.22); background: #080808; }
+.map-frame::before { content: ""; position: absolute; z-index: 1; inset: 0; border-right: .18rem solid #e5302e; pointer-events: none; }
+.map-frame iframe { display: block; width: 100%; height: 100%; min-height: 17.5rem; border: 0; filter: grayscale(1) contrast(1.15) brightness(.78) sepia(.18); }
+
 @media (max-width: 760px) {
   .night-rules { padding-top: 4.5rem; }
   .rules-head { display: block; margin-bottom: 2.8rem; }
@@ -237,6 +248,11 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
   .rules-head .arabic-title { font-size: clamp(2.05rem, 11vw, 3.4rem); }
   .rule-main.arabic-copy p { font-size: 1.5rem; }
   .rule-main.arabic-copy small { font-size: .7rem; line-height: 1.65; }
+  .map-ticket { grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; padding: 1rem; }
+  .map-ticket-copy { padding: .25rem 0 0; }
+  .map-ticket h3 { font-size: clamp(1.28rem, 6.15vw, 1.58rem); line-height: 1.2; }
+  .map-ticket-copy > p:last-child { max-width: none; font-size: .72rem; }
+  .map-frame, .map-frame iframe { min-height: 15rem; }
 }
 
 /* Layer-Driven Firelight Text: the copy is always present, but its ink starts black and is illuminated by the flare. */

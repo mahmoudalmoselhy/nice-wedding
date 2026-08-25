@@ -1,5 +1,5 @@
 /**
- * Flare-lit wedding invitation — a three-second blackout before the cinematic flare reveal, with an Excel-and-calculator headline and Arabic night rules.
+ * Flare-lit wedding invitation — a three-second blackout before the cinematic flare reveal, with updated September wedding details, a map, and Arabic night rules.
  */
 import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ export default function Home() {
   const [flareVisible, setFlareVisible] = useState(false);
 
   useEffect(() => {
-    const weddingDate = new Date("2026-08-21T19:00:00+03:00");
+    const weddingDate = new Date("2026-09-04T20:30:00+03:00");
     const updateCountdown = () => setDaysLeft(Math.max(0, Math.ceil((weddingDate.getTime() - Date.now()) / 86_400_000)));
     updateCountdown();
     const interval = window.setInterval(updateCountdown, 60_000);
@@ -36,7 +36,7 @@ export default function Home() {
         <div className="hero-blackout" aria-hidden="true" />
         <header className="nav-line">
           <p className="nav-label"><span className="brand-mark" aria-hidden="true"><i /><b>✦</b></span> HELWAN × MENOFIA</p>
-          <p className="nav-date">FRI / 21 AUG / 2026</p>
+          <p className="nav-date">FRI / 04 SEPT / 2026</p>
         </header>
 
         <div className="hero-content">
@@ -71,8 +71,8 @@ export default function Home() {
             <span className="rule-number">01</span>
             <div className="rule-label arabic-copy"><CalendarPlus size={18} strokeWidth={2.1} /> الموعد</div>
             <div className="rule-main arabic-copy">
-              <p>الجمعة، <strong>21 أغسطس.</strong></p>
-              <small>الباب هيفتح 7. تعالى بدري قبل ما البلايليست تحكم عليك.</small>
+              <p>الجمعة، <strong>4 سبتمبر.</strong></p>
+              <small>الباب هيفتح 8:30. تعالى بدري قبل ما البلايليست تحكم عليك.</small>
             </div>
             <span className="rule-side-note arabic-copy">مفيش تأخير شيك<br />لو سمحت.</span>
           </article>
@@ -81,10 +81,10 @@ export default function Home() {
             <span className="rule-number">02</span>
             <div className="rule-label arabic-copy"><MapPin size={18} strokeWidth={2.1} /> المكان</div>
             <div className="rule-main arabic-copy">
-              <p>بيت <strong>العروسة.</strong></p>
-              <small>امشي ورا جروب العيلة. جوجل مابس مش معزوم.</small>
+              <p>قاعة <strong>جراند حياة.</strong></p>
+              <small>داخل نادي الهيئة العربية للتصنيع، شارع عمر عبد العزيز، كورنيش حلوان.</small>
             </div>
-            <span className="rule-side-note arabic-copy">لو اتوهت، كلم<br />ابن خالتك المفضل.</span>
+            <span className="rule-side-note arabic-copy">الـGPS عارف السكة<br />المرة دي.</span>
           </article>
 
           <article className="rule-row rule-row-vibe">
@@ -97,6 +97,23 @@ export default function Home() {
             <span className="rule-side-note arabic-copy">هات الطاقة.<br />والباقي علينا.</span>
           </article>
         </div>
+
+        <article className="map-ticket arabic-copy" dir="rtl" aria-labelledby="map-title">
+          <div className="map-ticket-copy">
+            <p className="map-kicker"><MapPin size={17} strokeWidth={2.1} /> مكان الفرح على الخريطة</p>
+            <h3 id="map-title">نادي الهيئة العربية للتصنيع.<br /><i>قاعة جراند حياة.</i></h3>
+            <p>شارع عمر عبد العزيز، كورنيش حلوان.</p>
+          </div>
+          <div className="map-frame">
+            <iframe
+              title="Grand Hyatt Hall wedding venue map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.257187896939!2d31.318030249467053!3d29.83834985156681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145835002a405441%3A0xd6723485c62faf61!2z2YbYp9iv2Yog2KfZhNmH2YrYptipINin2YTYudix2KjZitipINmE2YTYqti12YbZiti5!5e0!3m2!1sen!2seg!4v1787683160222!5m2!1sen!2seg"
+              allowFullScreen
+              loading="eager"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+        </article>
 
         <div className="action-row rules-action">
           <button type="button" className="liquid-button" onClick={() => setDetailsOpen((open) => !open)} aria-expanded={detailsOpen}>

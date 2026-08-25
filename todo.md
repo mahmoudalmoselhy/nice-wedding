@@ -110,3 +110,11 @@
 - [x] Shift the firelight and text-reveal sequence to the new timing.
 - [x] Keep the flare fade-in gradual rather than abrupt.
 - [x] Verify the faster reveal on desktop and mobile.
+
+## Wedding Details & Maps Update
+
+- [x] Change the date to Friday, 4 September and the time to 8:30 PM.
+- [x] Update the countdown to the new wedding datetime.
+- [x] Replace the venue wording with the supplied Arabic address and Grand Hyatt Hall name.
+- [x] Add and style the provided Google Maps embed beneath the venue details.
+- [x] Verify updated copy and the responsive map on desktop and mobile.
