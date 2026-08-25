@@ -1,7 +1,7 @@
 /**
- * Flare-lit wedding invitation — a three-second blackout before the cinematic flare reveal, with updated September wedding details, a map, and Arabic night rules.
+ * Flare-lit wedding invitation — a three-second blackout before the cinematic flare reveal, with updated September details, an embedded map, and a direct Google Maps action.
  */
-import { ArrowDown, CalendarPlus, Check, MapPin, Music2, Sparkles } from "lucide-react";
+import { ArrowDown, CalendarPlus, Check, ExternalLink, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -103,6 +103,14 @@ export default function Home() {
             <p className="map-kicker"><MapPin size={17} strokeWidth={2.1} /> مكان الفرح على الخريطة</p>
             <h3 id="map-title">نادي الهيئة العربية للتصنيع.<br /><i>قاعة جراند حياة.</i></h3>
             <p>شارع عمر عبد العزيز، كورنيش حلوان.</p>
+            <a
+              className="map-open-button"
+              href="https://www.google.com/maps/search/?api=1&query=29.83834985156681%2C31.318030249467053"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>افتح المكان في Google Maps</span><ExternalLink size={16} strokeWidth={2.1} />
+            </a>
           </div>
           <div className="map-frame">
             <iframe

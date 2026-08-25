@@ -118,3 +118,10 @@
 - [x] Replace the venue wording with the supplied Arabic address and Grand Hyatt Hall name.
 - [x] Add and style the provided Google Maps embed beneath the venue details.
 - [x] Verify updated copy and the responsive map on desktop and mobile.
+
+## External Google Maps Action
+
+- [x] Add an external Google Maps link for the Grand Hyatt Hall venue.
+- [x] Style the action to match the black-and-red map ticket.
+- [x] Ensure it opens safely in a new tab or the Maps app.
+- [x] Verify the action on desktop and mobile layouts.

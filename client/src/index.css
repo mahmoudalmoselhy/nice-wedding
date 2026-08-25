@@ -1,5 +1,5 @@
 /*
- * Flare-lit wedding invitation — a three-second cinematic flare reveal, an oversized Excel-and-calculator headline, updated Grand Hyatt Hall map details, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
+ * Flare-lit wedding invitation — a three-second cinematic flare reveal, an oversized Excel-and-calculator headline, updated Grand Hyatt Hall map details with a direct Maps action, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -225,6 +225,9 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
 .map-ticket h3 { margin: 0; color: #f5f2ed; font-family: "Cairo", "Manrope", sans-serif; font-size: clamp(1.35rem, 2.5vw, 2.28rem); font-weight: 800; line-height: 1.14; letter-spacing: -.045em; }
 .map-ticket h3 i { color: #e5302e; font-style: normal; }
 .map-ticket-copy > p:last-child { max-width: 29ch; margin: .72rem 0 0 auto; color: rgba(245,242,237,.62); font-size: .75rem; font-weight: 600; line-height: 1.75; }
+.map-open-button { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; gap: .5rem; min-height: 2.8rem; margin-top: 1.1rem; padding: .65rem .9rem; color: #f5f2ed; border: 1px solid rgba(229,48,46,.85); border-radius: 999px; font-size: .71rem; font-weight: 800; line-height: 1; letter-spacing: 0; text-decoration: none; transition: transform 180ms cubic-bezier(.23,1,.32,1), color 180ms ease, border-color 180ms ease; }
+.map-open-button:hover { color: #e5302e; border-color: #f5f2ed; transform: translateY(-2px); }
+.map-open-button:focus-visible { outline: 2px solid #f5f2ed; outline-offset: 4px; }
 .map-frame { position: relative; min-height: 17.5rem; overflow: hidden; border: 1px solid rgba(245,242,237,.22); background: #080808; }
 .map-frame::before { content: ""; position: absolute; z-index: 1; inset: 0; border-right: .18rem solid #e5302e; pointer-events: none; }
 .map-frame iframe { display: block; width: 100%; height: 100%; min-height: 17.5rem; border: 0; filter: grayscale(1) contrast(1.15) brightness(.78) sepia(.18); }
@@ -252,6 +255,7 @@ h1 i { position: relative; color: #f04a45; font-style: italic; white-space: nowr
   .map-ticket-copy { padding: .25rem 0 0; }
   .map-ticket h3 { font-size: clamp(1.28rem, 6.15vw, 1.58rem); line-height: 1.2; }
   .map-ticket-copy > p:last-child { max-width: none; font-size: .72rem; }
+  .map-open-button { width: 100%; min-height: 3.2rem; margin-top: .9rem; font-size: .74rem; }
   .map-frame, .map-frame iframe { min-height: 15rem; }
 }
 
