@@ -125,3 +125,10 @@
 - [x] Style the action to match the black-and-red map ticket.
 - [x] Ensure it opens safely in a new tab or the Maps app.
 - [x] Verify the action on desktop and mobile layouts.
+
+## GitHub & Public Pages Hosting
+
+- [ ] Confirm the connected GitHub repository and its latest branch state.
+- [ ] Push the latest invitation version to the connected repository.
+- [ ] Enable GitHub Pages public hosting from the production branch.
+- [ ] Verify the repository and public Pages URL.

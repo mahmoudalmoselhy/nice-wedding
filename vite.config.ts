@@ -206,6 +206,8 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
+  // GitHub Pages serves this public repository beneath /nice-wedding/; Manus preview remains at the root.
+  base: process.env.GITHUB_ACTIONS === "true" ? "/nice-wedding/" : "/",
   plugins,
   resolve: {
     alias: {

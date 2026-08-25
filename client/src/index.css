@@ -1,5 +1,5 @@
 /*
- * Flare-lit wedding invitation — a three-second cinematic flare reveal, an oversized Excel-and-calculator headline, updated Grand Hyatt Hall map details with a direct Maps action, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
+ * Flare-lit wedding invitation — a three-second cinematic flare reveal, an oversized Excel-and-calculator headline, updated Grand Hyatt Hall map details with a direct Maps action, publicly hosted media, playful Arabic night rules, a Sa‘idi turban cursor, and mobile-first reading comfort.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -66,10 +66,10 @@ button { font: inherit; cursor: pointer; }
 /* Sa‘idi cursor: the invitation gets its own turban-and-cane pointer on precise desktop devices only. */
 @media (hover: hover) and (pointer: fine) {
   .minimal-invite,
-  .minimal-invite * { cursor: url("/manus-storage/saidi-turban-cane-cursor_12dc1790.svg") 12 31, auto; }
+  .minimal-invite * { cursor: url("https://masrwedding-9wk4ym4t.manus.space/manus-storage/saidi-turban-cane-cursor_12dc1790.svg") 12 31, auto; }
   .minimal-invite button,
   .minimal-invite [role="button"],
-  .minimal-invite a { cursor: url("/manus-storage/saidi-turban-cane-cursor-hover_75835b28.svg") 12 31, pointer; }
+  .minimal-invite a { cursor: url("https://masrwedding-9wk4ym4t.manus.space/manus-storage/saidi-turban-cane-cursor-hover_75835b28.svg") 12 31, pointer; }
 }
 .hero { position: relative; z-index: 2; display: flex; min-height: 100svh; flex-direction: column; padding: clamp(1.5rem, 3.5vw, 3.2rem) clamp(1.5rem, 7vw, 8rem) clamp(1.8rem, 4vw, 3.7rem); border-bottom: 1px solid rgba(255,255,255,0.1); overflow: hidden; background: #000000; }
 .hero::before { content: ""; position: absolute; z-index: 2; inset: -18%; opacity: 0; background: radial-gradient(ellipse 72% 110% at 89% 59%, rgba(255,47,25,.62) 0%, rgba(229,48,46,.28) 24%, rgba(229,48,46,.08) 48%, transparent 74%); mix-blend-mode: screen; pointer-events: none; transition: opacity 5s linear; }

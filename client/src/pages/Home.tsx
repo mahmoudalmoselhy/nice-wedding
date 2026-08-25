@@ -1,8 +1,10 @@
 /**
- * Flare-lit wedding invitation — a three-second blackout before the cinematic flare reveal, with updated September details, an embedded map, and a direct Google Maps action.
+ * Flare-lit wedding invitation — a three-second blackout before the cinematic flare reveal, with updated September details, an embedded map, a direct Google Maps action, and Pages-safe media URLs.
  */
 import { ArrowDown, CalendarPlus, Check, ExternalLink, MapPin, Music2, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
+
+const PROJECT_ASSET_ORIGIN = "https://masrwedding-9wk4ym4t.manus.space";
 
 export default function Home() {
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -30,7 +32,7 @@ export default function Home() {
       <section className={flareVisible ? "hero is-lit" : "hero"} aria-labelledby="invite-title">
         <div className={flareVisible ? "hero-flare-video is-visible" : "hero-flare-video"} aria-hidden="true">
           <video autoPlay loop muted playsInline preload="auto">
-            <source src="/manus-storage/realistic-red-flare-hero-loop_3816664d.mp4" type="video/mp4" />
+            <source src={`${PROJECT_ASSET_ORIGIN}/manus-storage/realistic-red-flare-hero-loop_3816664d.mp4`} type="video/mp4" />
           </video>
         </div>
         <div className="hero-blackout" aria-hidden="true" />
